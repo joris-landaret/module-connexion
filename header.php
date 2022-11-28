@@ -1,7 +1,7 @@
     <header>
         <div>
             <img src="img/images.jpg" alt="">
-            <h1>Insolite rainbow</h1>
+            <h1>Header Insolite rainbow</h1>
         </div>
 
         <div>
