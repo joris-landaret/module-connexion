@@ -8,18 +8,16 @@ img{
 header{
     display: flex;
 }
-div{
+header div{
     display: flex;
 }
-ul{
+header ul{
     display: flex;
     width: 300px;
     justify-content: space-around;
     
 }
-ul li{
+header ul li{
     display: flex;
     align-items: center;
-    
-
 }
