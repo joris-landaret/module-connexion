@@ -1,3 +1,40 @@
+<?php
+
+// connection à la base de donné
+include('connect.php');
+//$mysqli = mysqli_connect("localhost","root","","moduleconnexion",3307);
+
+//var_dump($mysqli);
+
+$request = $mysqli -> query("SELECT login, password FROM utilisateurs");
+
+//var_dump($request);
+
+$request_fetch_all = $request -> fetch_assoc();
+
+var_dump($request_fetch_all);
+
+// si requéte égale à post alors
+
+//while(isset($request_fetch_all)){
+    if(isset($request_fetch_all['login']) == isset($_POST['log']) && isset($request_fetch_all['password']) == isset($_POST['pass'])){
+        
+        $log = $_POST['log'];
+        $pass = $_POST['pass'];
+        $login = $request_fetch_all['login'];
+        $password = $request_fetch_all['password'];
+
+        var_dump($login);
+        echo 'Bienvennu '.$login;
+
+        //session_start();
+    
+    }
+    else{}
+//}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,14 +53,14 @@
 
         <div>
             <h1>Connecte toi vite !!!</h1>
-            <form action="">
-                <label for="">Login</label>
-                <Input></Input>
+            <form action="" method="post">
+                <label for="login">Login</label>
+                <Input type="text" name="login"></Input>
 
-                <label for="">Password</label>
-                <Input></Input>
+                <label for="password">Password</label>
+                <Input type="text" name="password"></Input>
 
-                <input type="submit" value="vite !!!">
+                <input type="submit" name="vite" value="vite !!!">
             </form>
         </div>
 
